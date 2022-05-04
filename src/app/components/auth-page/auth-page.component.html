@@ -1,7 +1,13 @@
-<ng-container *ngIf="signInFormDisplayIsActive">
-  <app-login-page></app-login-page>
-</ng-container>
+<mat-grid-list cols="4" rowHeight="2:1">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile [colspan]="2">
+    <ng-container *ngIf="signInFormDisplayIsActive">
+      <app-login-page></app-login-page>
+    </ng-container>
 
-<ng-container *ngIf="!signInFormDisplayIsActive">
-  <app-registration-page></app-registration-page>
-</ng-container>
+    <ng-container *ngIf="!signInFormDisplayIsActive">
+      <app-registration-page></app-registration-page>
+    </ng-container>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
