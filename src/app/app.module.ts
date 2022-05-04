@@ -11,6 +11,10 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { UserCreationPageComponent } from './components/user-creation-page/user-creation-page.component';
 import { UserDisplayPageComponent } from './components/user-display-page/user-display-page.component';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +23,17 @@ import { UserDisplayPageComponent } from './components/user-display-page/user-di
     LoginPageComponent,
     RegistrationPageComponent,
     UserCreationPageComponent,
-    UserDisplayPageComponent
+    UserDisplayPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
