@@ -1,3 +1,16 @@
 <mat-card>
-  <mat-card-content> Login</mat-card-content>
+  <mat-card-content>
+    <form [formGroup]="userLoginForm">
+      <div class="form-fields-main-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput formControlName="password" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
 </mat-card>
