@@ -1,3 +1,28 @@
 <mat-card>
-  <mat-card-content> Registration </mat-card-content>
+  <mat-card-content>
+    <form [formGroup]="userRegistrationForm">
+      <div class="form-fields-main-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your surname</mat-label>
+          <input matInput formControlName="surname" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your surname</mat-label>
+          <input matInput formControlName="age" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your gender</mat-label>
+          <input matInput formControlName="gender" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
 </mat-card>
