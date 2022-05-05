@@ -17,4 +17,8 @@ export class RegistrationPageComponent implements OnInit {
   });
 
   ngOnInit(): void {}
+
+  registerUser() {
+    console.log(this.userRegistrationForm.value);
+  }
 }

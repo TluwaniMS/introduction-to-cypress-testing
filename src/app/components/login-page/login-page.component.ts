@@ -15,4 +15,8 @@ export class LoginPageComponent implements OnInit {
   });
 
   ngOnInit(): void {}
+
+  signIn() {
+    console.log(this.userLoginForm.value);
+  }
 }

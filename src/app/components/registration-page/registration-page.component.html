@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-    <form [formGroup]="userRegistrationForm">
+    <form [formGroup]="userRegistrationForm" (ngSubmit)="registerUser()">
       <div class="form-fields-main-container">
         <div class="form-inputs-container">
           <mat-form-field appearance="fill">
@@ -34,6 +34,9 @@
           <mat-error *ngIf="userRegistrationForm.get('email')?.hasError('email')">Please enter a valid email.</mat-error>
         </mat-form-field>
       </div>
+      <button mat-flat-button color="primary">
+        register
+      </button>
     </form>
   </mat-card-content>
 </mat-card>
