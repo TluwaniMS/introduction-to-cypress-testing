@@ -23,4 +23,12 @@ export class AuthenticationService {
   signIn({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
+
+  getUserToken() {
+    return this.auth.currentUser?.getIdToken();
+  }
+
+  getSignedInUser() {
+    return this.auth.currentUser;
+  }
 }
