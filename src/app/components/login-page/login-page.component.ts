@@ -31,11 +31,15 @@ export class LoginPageComponent implements OnInit {
         this.snackbarService.successSnackBarDisplay(
           AuthenticationResponseMessage.successful
         );
+
+        this.userLoginForm.reset();
       })
       .catch((error) => {
         const message = this.authenticationErrorMessageSelection(error.message);
 
         this.snackbarService.errorSnackBarDisplay(message);
+
+        this.userLoginForm.reset();
       });
   }
 
