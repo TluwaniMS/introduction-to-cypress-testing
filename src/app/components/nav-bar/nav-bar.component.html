@@ -6,6 +6,6 @@
     <mat-icon>people</mat-icon>
   </button>
   <button mat-icon-button>
-    <mat-icon>exit_to_app</mat-icon>
+    <mat-icon *ngIf="authService.getSignedInUser()">exit_to_app</mat-icon>
   </button>
 </mat-toolbar>
