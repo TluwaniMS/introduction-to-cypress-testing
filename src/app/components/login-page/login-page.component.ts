@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
+import { SnackBarServiceService } from '../../services/snack-bar-service.service';
+import { AuthenticationResponseMessage } from '../../enumerators.ts/authentication-response-messages';
+import { FireBaseAuthErrorMessage } from '../../enumerators.ts/firebase-sign-in-error-messages';
 
 @Component({
   selector: 'app-login-page',
@@ -10,7 +13,8 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class LoginPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private snackbarService: SnackBarServiceService
   ) {}
 
   userLoginForm = this.fb.group({
@@ -24,10 +28,29 @@ export class LoginPageComponent implements OnInit {
     this.authService
       .signIn(this.userLoginForm.value)
       .then((response) => {
-        console.log(`Success`);
+        this.snackbarService.successSnackBarDisplay(
+          AuthenticationResponseMessage.successful
+        );
       })
       .catch((error) => {
-        console.log(`Error`);
+        const message = this.authenticationErrorMessageSelection(error.message);
+
+        this.snackbarService.errorSnackBarDisplay(message);
       });
+  }
+
+  authenticationErrorMessageSelection(fireBaseErrorMessage: string) {
+    let message = '';
+
+    switch (fireBaseErrorMessage) {
+      case FireBaseAuthErrorMessage.UnidentifiedUser:
+        message = AuthenticationResponseMessage.userNotMatching;
+        break;
+      case FireBaseAuthErrorMessage.WrongPassword:
+        message = AuthenticationResponseMessage.passwordNotMatching;
+        break;
+    }
+
+    return message;
   }
 }

@@ -12,6 +12,7 @@ export class SnackBarServiceService {
       verticalPosition: 'top',
       horizontalPosition: 'right',
       panelClass: 'snack-bar-success-container',
+      duration: 2000,
     });
   }
 
@@ -20,6 +21,7 @@ export class SnackBarServiceService {
       verticalPosition: 'top',
       horizontalPosition: 'right',
       panelClass: 'snack-bar-error-container',
+      duration: 2000,
     });
   }
 }
