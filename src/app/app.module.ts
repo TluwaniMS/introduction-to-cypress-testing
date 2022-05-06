@@ -20,9 +20,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -46,8 +48,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatSnackBarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
   ],
   providers: [],
   bootstrap: [AppComponent],
