@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,7 +8,10 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login-page.component.sass'],
 })
 export class LoginPageComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthenticationService
+  ) {}
 
   userLoginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -17,6 +21,13 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn() {
-    console.log(this.userLoginForm.value);
+    this.authService
+      .signIn(this.userLoginForm.value)
+      .then((response) => {
+        console.log(`Success`);
+      })
+      .catch((error) => {
+        console.log(`Error`);
+      });
   }
 }
