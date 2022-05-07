@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-page.component.sass'],
 })
 export class AuthPageComponent implements OnInit {
-  signInFormDisplayIsActive = true;
+  signInFormDisplayIsActive = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  changeDisplayAuthView() {
+    this.signInFormDisplayIsActive
+      ? (this.signInFormDisplayIsActive = false)
+      : (this.signInFormDisplayIsActive = true);
+  }
 }

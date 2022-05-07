@@ -4,6 +4,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { SnackBarServiceService } from '../../services/snack-bar-service.service';
 import { AuthenticationResponseMessage } from '../../enumerators.ts/authentication-response-messages';
 import { FireBaseAuthErrorMessage } from '../../enumerators.ts/firebase-sign-in-error-messages';
+import { EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login-page',
@@ -11,6 +12,8 @@ import { FireBaseAuthErrorMessage } from '../../enumerators.ts/firebase-sign-in-
   styleUrls: ['./login-page.component.sass'],
 })
 export class LoginPageComponent implements OnInit {
+  @Output() changeAuthScreen = new EventEmitter<any>();
+
   spinnerIsActive = false;
   constructor(
     private fb: FormBuilder,
@@ -60,5 +63,9 @@ export class LoginPageComponent implements OnInit {
     }
 
     return message;
+  }
+
+  switchAuthScreen() {
+    this.changeAuthScreen.emit();
   }
 }

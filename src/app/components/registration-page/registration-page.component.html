@@ -2,41 +2,46 @@
   <mat-card-content>
     <form [formGroup]="userRegistrationForm" (ngSubmit)="registerUser()">
       <div class="form-fields-main-container">
-        <div class="form-inputs-container">
-          <mat-form-field appearance="fill">
-            <mat-label>Enter your name</mat-label>
-            <input matInput formControlName="name" />
-            <mat-error *ngIf="userRegistrationForm.get('name')?.hasError('required')">Please enter your name</mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Enter your surname</mat-label>
-            <input matInput formControlName="surname" />
-            <mat-error *ngIf="userRegistrationForm.get('surname')?.hasError('required')">Please enter your surname</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="form-inputs-container">
-          <mat-form-field appearance="fill">
-            <mat-label>Enter your age</mat-label>
-            <input matInput formControlName="age" />
-            <mat-error *ngIf="userRegistrationForm.get('age')?.hasError('required')">Please specify your age</mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Enter your gender</mat-label>
-            <input matInput formControlName="gender" />
-            <mat-error *ngIf="userRegistrationForm.get('gender')?.hasError('required')">Please select your gender</mat-error>
-          </mat-form-field>
-        </div>
-
         <mat-form-field appearance="fill">
           <mat-label>Enter your email</mat-label>
           <input matInput formControlName="email" />
-          <mat-error *ngIf="userRegistrationForm.get('email')?.hasError('required')">Please enter your email.</mat-error>
-          <mat-error *ngIf="userRegistrationForm.get('email')?.hasError('email')">Please enter a valid email.</mat-error>
+          <mat-error
+            *ngIf="userRegistrationForm.get('email')?.hasError('required')"
+            >Please enter your email.</mat-error
+          >
+          <mat-error
+            *ngIf="userRegistrationForm.get('email')?.hasError('email')"
+            >Please enter a valid email.</mat-error
+          >
         </mat-form-field>
+        <div class="form-inputs-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" />
+            <mat-error
+              *ngIf="userRegistrationForm.get('password')?.hasError('required')"
+              >Please enter your password</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Confirmation password</mat-label>
+            <input matInput formControlName="passwordConfirmation" />
+            <mat-error
+              *ngIf="userRegistrationForm.get('passwordConfirmation')?.hasError('required')"
+              >Please confirm your password </mat-error
+            >
+          </mat-form-field>
+        </div>
       </div>
-      <button mat-flat-button color="primary" [disabled]="!userRegistrationForm.valid">
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="!userRegistrationForm.valid"
+        class="registration-button"
+      >
         register
       </button>
     </form>
+    <div class="auth-prompt-container" (click)="switchAuthScreen()">sign-in</div>
   </mat-card-content>
 </mat-card>
