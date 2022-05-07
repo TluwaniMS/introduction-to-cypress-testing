@@ -1,22 +1,42 @@
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="userLoginForm" (ngSubmit)="signIn()">
-      <mat-form-field appearance="fill">
-        <mat-label>Enter your email</mat-label>
-        <input matInput formControlName="email" />
-        <mat-error *ngIf="userLoginForm.get('email')?.hasError('required')"
-          >Please enter your email</mat-error
-        >
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Enter your password</mat-label>
-        <input matInput formControlName="password" />
-        <mat-error *ngIf="userLoginForm.get('password')?.hasError('required')"
-          >Please enter your password</mat-error
-        >
-      </mat-form-field>
+<ng-container *ngIf="spinnerIsActive">
+  <ng-container *ngTemplateOutlet="spinnerContainer"></ng-container>
+</ng-container>
 
-      <button mat-flat-button color="primary" [disabled]="!userLoginForm.valid">submit</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<ng-container *ngIf="!spinnerIsActive">
+  <ng-container *ngTemplateOutlet="formContainer"></ng-container>
+</ng-container>
+
+<ng-template #spinnerContainer>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
+<ng-template #formContainer>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="userLoginForm" (ngSubmit)="signIn()">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="userLoginForm.get('email')?.hasError('required')"
+            >Please enter your email</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput formControlName="password" />
+          <mat-error *ngIf="userLoginForm.get('password')?.hasError('required')"
+            >Please enter your password</mat-error
+          >
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="primary"
+          [disabled]="!userLoginForm.valid"
+        >
+          submit
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

@@ -11,6 +11,7 @@ import { FireBaseAuthErrorMessage } from '../../enumerators.ts/firebase-sign-in-
   styleUrls: ['./login-page.component.sass'],
 })
 export class LoginPageComponent implements OnInit {
+  spinnerIsActive = false;
   constructor(
     private fb: FormBuilder,
     private authService: AuthenticationService,
@@ -25,6 +26,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn() {
+    this.spinnerIsActive = true;
     this.authService
       .signIn(this.userLoginForm.value)
       .then((response) => {
@@ -33,6 +35,7 @@ export class LoginPageComponent implements OnInit {
         );
 
         this.userLoginForm.reset();
+        this.spinnerIsActive = false;
       })
       .catch((error) => {
         const message = this.authenticationErrorMessageSelection(error.message);
@@ -40,6 +43,7 @@ export class LoginPageComponent implements OnInit {
         this.snackbarService.errorSnackBarDisplay(message);
 
         this.userLoginForm.reset();
+        this.spinnerIsActive = false;
       });
   }
 
