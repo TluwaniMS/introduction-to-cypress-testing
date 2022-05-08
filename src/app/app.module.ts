@@ -8,8 +8,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AuthPageComponent } from './components/auth-page/auth-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
-import { UserCreationPageComponent } from './components/user-creation-page/user-creation-page.component';
-import { UserDisplayPageComponent } from './components/user-display-page/user-display-page.component';
+import { SuperHeroesDisplayComponent } from './components/super-heroes-display/super-heroes-display.component';
+import { SuperPowersDisplayComponent } from './components/super-powers-display/super-powers-display.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -37,10 +37,10 @@ import { PasswordValidatorDirective } from './custom-form-validator/password-val
     AuthPageComponent,
     LoginPageComponent,
     RegistrationPageComponent,
-    UserCreationPageComponent,
-    UserDisplayPageComponent,
     PasswordConfirmationValidatorDirective,
     PasswordValidatorDirective,
+    SuperHeroesDisplayComponent,
+    SuperPowersDisplayComponent,
   ],
   imports: [
     BrowserModule,

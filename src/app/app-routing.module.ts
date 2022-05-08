@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserDisplayPageComponent } from './components/user-display-page/user-display-page.component';
-import { UserCreationPageComponent } from './components/user-creation-page/user-creation-page.component';
+import { SuperHeroesDisplayComponent } from './components/super-heroes-display/super-heroes-display.component';
+import { SuperPowersDisplayComponent } from './components/super-powers-display/super-powers-display.component';
 import { AuthPageComponent } from './components/auth-page/auth-page.component';
 import {
   AuthGuard,
@@ -11,32 +11,34 @@ import {
 
 const redirectUnauthorisedToAuthPage = () =>
   redirectUnauthorizedTo(['/authentication']);
-const redirectAuthorisedToUsersPage = () =>
-  redirectUnauthorizedTo(['/authentication']);
+
+const redirectAuthorisedToSuperHeroesPage = () =>
+  redirectLoggedInTo(['/super-heroes-display']);
 
 const routes: Routes = [
   {
     path: 'authentication',
     component: AuthPageComponent,
-    data: { authGuardPipe: redirectAuthorisedToUsersPage },
+    data: { authGuardPipe: redirectAuthorisedToSuperHeroesPage },
   },
   {
-    path: 'user-creation',
-    component: UserCreationPageComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe:redirectUnauthorisedToAuthPage },
-  },
-  {
-    path: 'users-display',
-    component: UserDisplayPageComponent,
+    path: 'super-heroes-display',
+    component: SuperHeroesDisplayComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorisedToAuthPage },
   },
-  { path: '', redirectTo: '/users-display', pathMatch: 'full' },
+  {
+    path: 'super-powers-display',
+    component: SuperPowersDisplayComponent,
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorisedToAuthPage },
+  },
+  { path: '', redirectTo: '/super-heroes-display', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
+
 export class AppRoutingModule {}
