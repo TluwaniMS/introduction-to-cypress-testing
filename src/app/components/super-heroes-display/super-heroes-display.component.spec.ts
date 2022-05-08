@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserDisplayPageComponent } from './user-display-page.component';
+import { SuperHeroesDisplayComponent } from './super-heroes-display.component';
 
-describe('UserDisplayPageComponent', () => {
-  let component: UserDisplayPageComponent;
-  let fixture: ComponentFixture<UserDisplayPageComponent>;
+describe('SuperHeroesDisplayComponent', () => {
+  let component: SuperHeroesDisplayComponent;
+  let fixture: ComponentFixture<SuperHeroesDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserDisplayPageComponent ]
+      declarations: [ SuperHeroesDisplayComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserDisplayPageComponent);
+    fixture = TestBed.createComponent(SuperHeroesDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
