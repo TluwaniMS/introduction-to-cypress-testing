@@ -1,4 +1,4 @@
-const SuperPowers = [
+export const SuperPowers = [
   {
     _id: '61f58a1d2f87a0e538236b2b',
     power: 'The Pyramid Punch',
