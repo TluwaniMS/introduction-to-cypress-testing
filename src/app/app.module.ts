@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -29,6 +30,9 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { PasswordConfirmationValidatorDirective } from './custom-form-validator/password-confirmation-validator.directive';
 import { PasswordValidatorDirective } from './custom-form-validator/password-validator.directive';
+import { ContentDeletionConfirmationComponent } from './modals/content-deletion-confirmation/content-deletion-confirmation.component';
+import { SuperHeroCreatorComponent } from './modals/super-hero-creator/super-hero-creator.component';
+import { SuperPowerCreatorComponent } from './modals/super-power-creator/super-power-creator.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import { PasswordValidatorDirective } from './custom-form-validator/password-val
     PasswordValidatorDirective,
     SuperHeroesDisplayComponent,
     SuperPowersDisplayComponent,
+    ContentDeletionConfirmationComponent,
+    SuperHeroCreatorComponent,
+    SuperPowerCreatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +63,7 @@ import { PasswordValidatorDirective } from './custom-form-validator/password-val
     MatInputModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
