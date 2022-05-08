@@ -17,7 +17,7 @@
         <div class="form-inputs-container">
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
-            <input matInput formControlName="password" />
+            <input matInput formControlName="password" type="password" />
             <mat-error
               *ngIf="userRegistrationForm.get('password')?.hasError('required')"
               >Please enter your password</mat-error
@@ -25,11 +25,22 @@
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Confirmation password</mat-label>
-            <input matInput formControlName="passwordConfirmation" />
+            <input
+              matInput
+              formControlName="passwordConfirmation"
+              type="password"
+            />
             <mat-error
-              *ngIf="userRegistrationForm.get('passwordConfirmation')?.hasError('required')"
-              >Please confirm your password </mat-error
-            >
+              *ngIf="
+                userRegistrationForm
+                  .get('passwordConfirmation')
+                  ?.hasError('required')
+              "
+              >Please confirm your password
+            </mat-error>
+            <mat-error *ngIf="userRegistrationForm.errors?.passwordsDontMatch"
+              >Please ensure that your passwords match
+            </mat-error>
           </mat-form-field>
         </div>
       </div>
@@ -42,6 +53,8 @@
         register
       </button>
     </form>
-    <div class="auth-prompt-container" (click)="switchAuthScreen()">sign-in</div>
+    <div class="auth-prompt-container" (click)="switchAuthScreen()">
+      sign-in
+    </div>
   </mat-card-content>
 </mat-card>
