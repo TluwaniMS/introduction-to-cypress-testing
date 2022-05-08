@@ -14,7 +14,11 @@ export class AuthenticationService {
   constructor(private auth: Auth, private router: Router) {}
 
   register({ email, password }: any) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+    return createUserWithEmailAndPassword(this.auth, email, password).then(
+      () => {
+        this.router.navigate(['/']);
+      }
+    );
   }
 
   signOut() {
