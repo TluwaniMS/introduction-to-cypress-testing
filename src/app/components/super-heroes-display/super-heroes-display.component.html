@@ -4,7 +4,9 @@
       <mat-card>
         <mat-card-title>{{ superHero.name }}</mat-card-title>
         <mat-card-actions>
-          <button mat-icon-button><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button>
+            <mat-icon (click)="deleteSuperHero(superHero._id)">delete</mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>

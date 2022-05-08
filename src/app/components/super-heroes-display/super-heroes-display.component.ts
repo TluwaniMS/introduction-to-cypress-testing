@@ -14,4 +14,9 @@ export class SuperHeroesDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.superHeroes = this.superHeroesService.getSuperHeroes();
   }
+
+  deleteSuperHero(superHeroId: string) {
+    this.superHeroesService.deleteSuperHeroById(superHeroId);
+    this.superHeroes = this.superHeroesService.getSuperHeroes();
+  }
 }

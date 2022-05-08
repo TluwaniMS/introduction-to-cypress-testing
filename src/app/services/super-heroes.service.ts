@@ -14,7 +14,7 @@ export class SuperHeroesService {
 
   deleteSuperHeroById(superHeroId: string) {
     this.ArrayOfSuperHeroes = this.ArrayOfSuperHeroes.filter(
-      (superHero) => superHero._id! === superHeroId
+      (superHero) => superHero._id !== superHeroId
     );
   }
 
