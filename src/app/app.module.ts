@@ -28,6 +28,7 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { PasswordConfirmationValidatorDirective } from './custom-form-validator/password-confirmation-validator.directive';
+import { PasswordValidatorDirective } from './custom-form-validator/password-validator.directive';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PasswordConfirmationValidatorDirective } from './custom-form-validator/
     UserCreationPageComponent,
     UserDisplayPageComponent,
     PasswordConfirmationValidatorDirective,
+    PasswordValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,10 @@ import { PasswordConfirmationValidatorDirective } from './custom-form-validator/
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
-  providers: [PasswordConfirmationValidatorDirective],
+  providers: [
+    PasswordConfirmationValidatorDirective,
+    PasswordValidatorDirective,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
