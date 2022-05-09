@@ -24,11 +24,13 @@ export class SuperPowersDisplayComponent implements OnInit {
     this.superPowers = this.superPowersService.getAllSuperPowers();
   }
 
-  confirmSuperPowerDeletion(superPowerId: string) {
-    const dialogRef = this.dialog.open(ContentDeletionConfirmationComponent);
+  confirmSuperPowerDeletion(superPower: any) {
+    const dialogRef = this.dialog.open(ContentDeletionConfirmationComponent, {
+      data: { title: superPower.power },
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
-      result ? this.deleteSuperPower(superPowerId) : '';
+      result ? this.deleteSuperPower(superPower._id) : '';
     });
   }
 }

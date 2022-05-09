@@ -8,11 +8,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ContentDeletionConfirmationComponent implements OnInit {
   constructor(
-    private matDialogRef: MatDialogRef<ContentDeletionConfirmationComponent>
+    private matDialogRef: MatDialogRef<ContentDeletionConfirmationComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
-  name = 'Thoka'
-  
+  name = 'Thoka';
+
   ngOnInit(): void {}
 
   closeModal(confirmContentDeletion = false) {

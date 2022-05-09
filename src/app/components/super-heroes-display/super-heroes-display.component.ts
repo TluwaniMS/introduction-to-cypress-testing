@@ -26,11 +26,13 @@ export class SuperHeroesDisplayComponent implements OnInit {
     this.superHeroes = this.superHeroesService.getSuperHeroes();
   }
 
-  confirmSuperHeroDeletion(superHeroId: string) {
-    const dialogRef = this.dialog.open(ContentDeletionConfirmationComponent);
+  confirmSuperHeroDeletion(superHero: any) {
+    const dialogRef = this.dialog.open(ContentDeletionConfirmationComponent, {
+      data: { title: superHero.name },
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
-      result ? this.deleteSuperHero(superHeroId) : '';
+      result ? this.deleteSuperHero(superHero._id) : '';
     });
   }
 }
