@@ -1,14 +1,17 @@
 <mat-toolbar color="primary">
   <button mat-icon-button>
-    <mat-icon [routerLink]="['/super-powers-display']">whatshot</mat-icon>
+    <mat-icon [routerLink]="['/super-powers-display']"
+    matTooltip="view super powers">whatshot</mat-icon>
   </button>
   <button mat-icon-button>
-    <mat-icon [routerLink]="['/super-heroes-display']">people</mat-icon>
+    <mat-icon [routerLink]="['/super-heroes-display']"
+    matTooltip="view super heroes">people</mat-icon>
   </button>
   <button mat-icon-button>
     <mat-icon
       *ngIf="authService.getSignedInUser()"
       (click)="authService.signOut()"
+      matTooltip="sign out"
       >exit_to_app</mat-icon
     >
   </button>
