@@ -11,9 +11,11 @@ export class ContentDeletionConfirmationComponent implements OnInit {
     private matDialogRef: MatDialogRef<ContentDeletionConfirmationComponent>
   ) {}
 
+  name = 'Thoka'
+  
   ngOnInit(): void {}
 
-  closeModal() {
-    this.matDialogRef.close();
+  closeModal(confirmContentDeletion = false) {
+    this.matDialogRef.close(confirmContentDeletion);
   }
 }

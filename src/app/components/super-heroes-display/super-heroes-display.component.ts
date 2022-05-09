@@ -26,11 +26,11 @@ export class SuperHeroesDisplayComponent implements OnInit {
     this.superHeroes = this.superHeroesService.getSuperHeroes();
   }
 
-  confirmSuperHeroDeletion() {
+  confirmSuperHeroDeletion(superHeroId: string) {
     const dialogRef = this.dialog.open(ContentDeletionConfirmationComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
+      result ? this.deleteSuperHero(superHeroId) : '';
     });
   }
 }

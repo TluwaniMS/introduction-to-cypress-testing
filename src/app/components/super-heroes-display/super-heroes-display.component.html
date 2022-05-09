@@ -5,7 +5,7 @@
         <mat-card-title>{{ superHero.name }}</mat-card-title>
         <mat-card-actions>
           <button mat-icon-button>
-            <mat-icon (click)="confirmSuperHeroDeletion()">delete</mat-icon>
+            <mat-icon (click)="confirmSuperHeroDeletion(superHero._id)">delete</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>

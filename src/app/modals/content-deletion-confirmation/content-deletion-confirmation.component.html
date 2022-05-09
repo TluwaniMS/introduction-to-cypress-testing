@@ -1,1 +1,15 @@
-<p (click)="closeModal()">content-deletion-confirmation works!</p>
+<div mat-dialog-title>Confirm Content Deletion</div>
+
+<div mat-dialog-content>
+  <div>
+    Are your sure you'd like to delete the following content?
+    {{ name }}
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="closeModal()">Cancel</button>
+  <button mat-button cdkFocusInitial color="primary" (click)="closeModal(true)">
+    Confirm
+  </button>
+</div>
