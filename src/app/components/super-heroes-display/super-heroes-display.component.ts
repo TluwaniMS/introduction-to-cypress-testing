@@ -28,5 +28,9 @@ export class SuperHeroesDisplayComponent implements OnInit {
 
   confirmSuperHeroDeletion() {
     const dialogRef = this.dialog.open(ContentDeletionConfirmationComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
   }
 }
