@@ -5,7 +5,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Super Powers</mat-label>
-    <mat-select [formControl]="superPowers" multiple>
+    <mat-select formControlName="superPowers" multiple>
       <mat-option *ngFor="let superPower of superPowers" [value]="superPower">{{
         superPower.power
       }}</mat-option>

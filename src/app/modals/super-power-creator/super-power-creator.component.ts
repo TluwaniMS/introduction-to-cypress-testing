@@ -16,4 +16,6 @@ export class SuperPowerCreatorComponent implements OnInit {
     power: ['', [Validators.required]],
     description: ['', [Validators.required]],
   });
+
+  createSuperPower() {}
 }
