@@ -11,4 +11,12 @@
       }}</mat-option>
     </mat-select>
   </mat-form-field>
+  <button
+  mat-flat-button
+  color="primary"
+  [disabled]="!superHeroCreationForm.valid"
+  class="registration-button"
+>
+  create
+</button>
 </form>

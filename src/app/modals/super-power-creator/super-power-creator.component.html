@@ -11,4 +11,12 @@
       placeholder="Super power description..."
     ></textarea>
   </mat-form-field>
+  <button
+  mat-flat-button
+  color="primary"
+  [disabled]="!superPowerCreationForm.valid"
+  class="registration-button"
+>
+  Create
+</button>
 </form>
