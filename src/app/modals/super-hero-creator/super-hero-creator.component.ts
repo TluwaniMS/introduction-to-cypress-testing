@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SuperPowersService } from '../../services/super-powers.service';
 import { SuperHeroesService } from '../../services/super-heroes.service';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-super-hero-creator',
@@ -12,7 +14,9 @@ export class SuperHeroCreatorComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private superPowersService: SuperPowersService,
-    private superHeroesService: SuperHeroesService
+    private superHeroesService: SuperHeroesService,
+    private matDialogRef: MatDialogRef<SuperHeroCreatorComponent>,
+    private router: Router
   ) {}
 
   superPowers: any[] = [];
@@ -31,6 +35,8 @@ export class SuperHeroCreatorComponent implements OnInit {
   });
 
   createSuperHero() {
-    console.log(this.superHeroCreationForm.value);
+    this.superHeroesService.createSuperHero(this.superHeroCreationForm.value);
+    this.matDialogRef.close();
+    this.router.navigate(['/super-heroes-display']);
   }
 }
