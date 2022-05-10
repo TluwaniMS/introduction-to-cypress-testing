@@ -1,1 +1,14 @@
-<p>super-power-creator works!</p>
+<form [formGroup]="form" (ngSubmit)="registerUser()">
+  <mat-form-field appearance="fill">
+    <mat-label>Super Power</mat-label>
+    <input matInput formControlName="power" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="Super power description..."
+    ></textarea>
+  </mat-form-field>
+</form>
