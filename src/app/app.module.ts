@@ -35,6 +35,7 @@ import { PasswordValidatorDirective } from './custom-form-validator/password-val
 import { ContentDeletionConfirmationComponent } from './modals/content-deletion-confirmation/content-deletion-confirmation.component';
 import { SuperHeroCreatorComponent } from './modals/super-hero-creator/super-hero-creator.component';
 import { SuperPowerCreatorComponent } from './modals/super-power-creator/super-power-creator.component';
+import { ContentTypeSelectionComponent } from './modals/content-type-selection/content-type-selection.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SuperPowerCreatorComponent } from './modals/super-power-creator/super-p
     ContentDeletionConfirmationComponent,
     SuperHeroCreatorComponent,
     SuperPowerCreatorComponent,
+    ContentTypeSelectionComponent,
   ],
   imports: [
     BrowserModule,
