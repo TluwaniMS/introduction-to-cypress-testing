@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-super-hero-creator',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuperHeroCreatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  superHeroCreationForm = this.fb.group({
+    _id: ['', [Validators.required]],
+    name: ['', [Validators.required]],
+    superPowers: ['', [Validators.required]],
+  });
 }
