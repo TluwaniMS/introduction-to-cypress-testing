@@ -21,4 +21,8 @@ export class SuperPowersService {
       (superPower) => superPower._id !== superPowerId
     );
   }
+
+  generateSuperPowerId() {
+    return this.ArrayOfSuperPowers.length + 1
+  }
 }

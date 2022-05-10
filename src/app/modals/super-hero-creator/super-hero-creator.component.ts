@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SuperPowersService } from '../../services/super-powers.service';
+import { SuperHeroesService } from '../../services/super-heroes.service';
 
 @Component({
   selector: 'app-super-hero-creator',
@@ -10,7 +11,8 @@ import { SuperPowersService } from '../../services/super-powers.service';
 export class SuperHeroCreatorComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
-    private superPowersService: SuperPowersService
+    private superPowersService: SuperPowersService,
+    private superHeroesService: SuperHeroesService
   ) {}
 
   superPowers: any[] = [];
@@ -20,10 +22,15 @@ export class SuperHeroCreatorComponent implements OnInit {
   }
 
   superHeroCreationForm = this.fb.group({
-    _id: ['', [Validators.required]],
+    _id: [
+      this.superHeroesService.generateSuperHeroIdId(),
+      [Validators.required],
+    ],
     name: ['', [Validators.required]],
     superPowers: ['', [Validators.required]],
   });
 
-  createSuperHero() {}
+  createSuperHero() {
+    console.log(this.superHeroCreationForm.value);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { SuperPowersService } from '../../services/super-powers.service';
 
 @Component({
   selector: 'app-super-power-creator',
@@ -7,15 +8,23 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./super-power-creator.component.sass'],
 })
 export class SuperPowerCreatorComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private superPowersService: SuperPowersService
+  ) {}
 
   ngOnInit(): void {}
 
   superPowerCreationForm = this.fb.group({
-    _id: ['', [Validators.required]],
+    _id: [
+      this.superPowersService.generateSuperPowerId(),
+      [Validators.required],
+    ],
     power: ['', [Validators.required]],
     description: ['', [Validators.required]],
   });
 
-  createSuperPower() {}
+  createSuperPower() {
+    console.log(this.superPowerCreationForm.value);
+  }
 }

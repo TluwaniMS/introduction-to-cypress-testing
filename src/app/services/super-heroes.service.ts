@@ -21,4 +21,8 @@ export class SuperHeroesService {
   getSuperHeroes() {
     return this.ArrayOfSuperHeroes;
   }
+
+  generateSuperHeroIdId() {
+    return this.ArrayOfSuperHeroes.length + 1
+  }
 }
