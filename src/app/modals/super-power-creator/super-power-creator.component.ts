@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SuperPowersService } from '../../services/super-powers.service';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-super-power-creator',
@@ -10,7 +12,9 @@ import { SuperPowersService } from '../../services/super-powers.service';
 export class SuperPowerCreatorComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
-    private superPowersService: SuperPowersService
+    private superPowersService: SuperPowersService,
+    private router: Router,
+    private matDialogRef: MatDialogRef<SuperPowerCreatorComponent>
   ) {}
 
   ngOnInit(): void {}
@@ -25,6 +29,8 @@ export class SuperPowerCreatorComponent implements OnInit {
   });
 
   createSuperPower() {
-    console.log(this.superPowerCreationForm.value);
+    this.superPowersService.createSuperPower(this.superPowerCreationForm.value);
+    this.matDialogRef.close();
+    this.router.navigate(['/super-powers-display']);
   }
 }
