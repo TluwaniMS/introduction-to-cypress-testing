@@ -21,7 +21,7 @@ export class SuperHeroesDisplayComponent implements OnInit {
     this.superHeroes = this.superHeroesService.getSuperHeroes();
   }
 
-  deleteSuperHero(superHeroId: string) {
+  deleteSuperHero(superHeroId: number) {
     this.superHeroesService.deleteSuperHeroById(superHeroId);
     this.superHeroes = this.superHeroesService.getSuperHeroes();
   }

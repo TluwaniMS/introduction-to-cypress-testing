@@ -19,7 +19,7 @@ export class SuperPowersDisplayComponent implements OnInit {
     this.superPowers = this.superPowersService.getAllSuperPowers();
   }
 
-  deleteSuperPower(superPowerId: string) {
+  deleteSuperPower(superPowerId: number) {
     this.superPowersService.deleteSuperPowerById(superPowerId);
     this.superPowers = this.superPowersService.getAllSuperPowers();
   }

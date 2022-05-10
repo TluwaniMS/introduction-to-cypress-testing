@@ -16,7 +16,7 @@ export class SuperPowersService {
     return this.ArrayOfSuperPowers;
   }
 
-  deleteSuperPowerById(superPowerId: string) {
+  deleteSuperPowerById(superPowerId: number) {
     this.ArrayOfSuperPowers = this.ArrayOfSuperPowers.filter(
       (superPower) => superPower._id !== superPowerId
     );

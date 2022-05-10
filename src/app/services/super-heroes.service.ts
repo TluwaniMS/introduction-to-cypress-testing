@@ -12,7 +12,7 @@ export class SuperHeroesService {
     this.ArrayOfSuperHeroes.push(superHero);
   }
 
-  deleteSuperHeroById(superHeroId: string) {
+  deleteSuperHeroById(superHeroId: number) {
     this.ArrayOfSuperHeroes = this.ArrayOfSuperHeroes.filter(
       (superHero) => superHero._id !== superHeroId
     );
