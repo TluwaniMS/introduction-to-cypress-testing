@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { MatDialog } from '@angular/material/dialog';
+import { ContentTypeSelectionComponent } from '../../modals/content-type-selection/content-type-selection.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,5 +16,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openContentCreationModal() {}
+  openContentCreationModal() {
+    const dialogRef = this.dialog.open(ContentTypeSelectionComponent);
+  }
 }
