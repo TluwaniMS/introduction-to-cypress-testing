@@ -1,22 +1,25 @@
+<div mat-dialog-title>Create Super Power</div>
 <form [formGroup]="superPowerCreationForm" (ngSubmit)="createSuperPower()">
-  <mat-form-field appearance="fill">
-    <mat-label>Super Power</mat-label>
-    <input matInput formControlName="power" />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Description</mat-label>
-    <textarea
-      matInput
-      formControlName="description"
-      placeholder="Super power description..."
-    ></textarea>
-  </mat-form-field>
-  <button
-  mat-flat-button
-  color="primary"
-  [disabled]="!superPowerCreationForm.valid"
-  class="registration-button"
->
-  Create
-</button>
+  <div class="form-fields-main-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Super Power</mat-label>
+      <input matInput formControlName="power" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Super power description..."
+      ></textarea>
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="!superPowerCreationForm.valid"
+      class="registration-button"
+    >
+      Create
+    </button>
+  </div>
 </form>

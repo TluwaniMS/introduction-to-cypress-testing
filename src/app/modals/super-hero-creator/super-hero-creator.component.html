@@ -1,3 +1,4 @@
+<div mat-dialog-title>Create Super Hero</div>
 <form [formGroup]="superHeroCreationForm" (ngSubmit)="createSuperHero()">
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
@@ -12,11 +13,11 @@
     </mat-select>
   </mat-form-field>
   <button
-  mat-flat-button
-  color="primary"
-  [disabled]="!superHeroCreationForm.valid"
-  class="registration-button"
->
-  create
-</button>
+    mat-flat-button
+    color="primary"
+    [disabled]="!superHeroCreationForm.valid"
+    class="registration-button"
+  >
+    create
+  </button>
 </form>
