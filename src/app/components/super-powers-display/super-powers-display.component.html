@@ -1,14 +1,19 @@
+<div class="main-page-title">Super Powers</div>
 <mat-grid-list cols="4" rowHeight="2:1">
-    <ng-container *ngFor="let superPower of superPowers">
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-title>{{ superPower.power }}</mat-card-title>
-          <mat-card-actions>
-            <button mat-icon-button>
-              <mat-icon matTooltip="delete" (click)="confirmSuperPowerDeletion(superPower)">delete</mat-icon>
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-    </ng-container>
-  </mat-grid-list>
+  <ng-container *ngFor="let superPower of superPowers">
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>{{ superPower.power }}</mat-card-title>
+        <mat-card-actions>
+          <button mat-icon-button>
+            <mat-icon
+              matTooltip="delete"
+              (click)="confirmSuperPowerDeletion(superPower)"
+              >delete</mat-icon
+            >
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>

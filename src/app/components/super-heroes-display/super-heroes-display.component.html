@@ -1,3 +1,4 @@
+<div class="main-page-title">Super Heroes</div>
 <mat-grid-list cols="4" rowHeight="2:1">
   <ng-container *ngFor="let superHero of superHeroes">
     <mat-grid-tile>
@@ -5,7 +6,9 @@
         <mat-card-title>{{ superHero.name }}</mat-card-title>
         <mat-card-actions>
           <button mat-icon-button>
-            <mat-icon matTooltip="delete" (click)="confirmSuperHeroDeletion(superHero)"
+            <mat-icon
+              matTooltip="delete"
+              (click)="confirmSuperHeroDeletion(superHero)"
               >delete</mat-icon
             >
           </button>
