@@ -4,6 +4,8 @@ import { SuperPowersService } from '../../services/super-powers.service';
 import { SuperHeroesService } from '../../services/super-heroes.service';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { SnackBarServiceService } from '../../services/snack-bar-service.service';
+import { DefaultResponseMessages } from '../../enumerators.ts/default-response-messages';
 
 @Component({
   selector: 'app-super-hero-creator',
@@ -16,7 +18,8 @@ export class SuperHeroCreatorComponent implements OnInit {
     private superPowersService: SuperPowersService,
     private superHeroesService: SuperHeroesService,
     private matDialogRef: MatDialogRef<SuperHeroCreatorComponent>,
-    private router: Router
+    private router: Router,
+    private snackbarService: SnackBarServiceService
   ) {}
 
   superPowers: any[] = [];
@@ -38,5 +41,8 @@ export class SuperHeroCreatorComponent implements OnInit {
     this.superHeroesService.createSuperHero(this.superHeroCreationForm.value);
     this.matDialogRef.close();
     this.router.navigate(['/super-heroes-display']);
+    this.snackbarService.successSnackBarDisplay(
+      DefaultResponseMessages.OperationCompletedSuccessfully
+    );
   }
 }
