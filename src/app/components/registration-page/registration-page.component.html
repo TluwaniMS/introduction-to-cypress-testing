@@ -14,6 +14,7 @@
 
 <ng-template #userRegistrationFormContainer>
   <mat-card>
+    <mat-card-title class="card-content-title">Register</mat-card-title>
     <mat-card-content>
       <form [formGroup]="userRegistrationForm" (ngSubmit)="registerUser()">
         <div class="form-fields-main-container">
@@ -35,16 +36,18 @@
               <input matInput formControlName="password" type="password" />
               <mat-error
                 *ngIf="
-                  userRegistrationForm.get('password')?.hasError('passwordIsValidated')
+                  userRegistrationForm
+                    .get('password')
+                    ?.hasError('passwordIsValidated')
                 "
                 >Password must have 7 or more characters</mat-error
               >
               <mat-error
-              *ngIf="
-                userRegistrationForm.get('password')?.hasError('required')
-              "
-              >Please enter your password</mat-error
-            >
+                *ngIf="
+                  userRegistrationForm.get('password')?.hasError('required')
+                "
+                >Please enter your password</mat-error
+              >
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Confirmation password</mat-label>
