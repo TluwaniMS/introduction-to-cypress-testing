@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SuperHeroesService } from '../../services/super-heroes.service';
-import { SuperHeroCreatorComponent } from '../../modals/super-hero-creator/super-hero-creator.component';
 import { ContentDeletionConfirmationComponent } from '../../modals/content-deletion-confirmation/content-deletion-confirmation.component';
 import { MatDialog } from '@angular/material/dialog';
+import { SnackBarServiceService } from '../../services/snack-bar-service.service';
+import { DefaultResponseMessages } from '../../enumerators.ts/default-response-messages';
 
 @Component({
   selector: 'app-super-heroes-display',
@@ -14,7 +15,8 @@ export class SuperHeroesDisplayComponent implements OnInit {
 
   constructor(
     private superHeroesService: SuperHeroesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackbarService: SnackBarServiceService
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +26,9 @@ export class SuperHeroesDisplayComponent implements OnInit {
   deleteSuperHero(superHeroId: number) {
     this.superHeroesService.deleteSuperHeroById(superHeroId);
     this.superHeroes = this.superHeroesService.getSuperHeroes();
+    this.snackbarService.successSnackBarDisplay(
+      DefaultResponseMessages.OperationCompletedSuccessfully
+    );
   }
 
   confirmSuperHeroDeletion(superHero: any) {

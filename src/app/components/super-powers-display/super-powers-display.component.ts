@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SuperPowersService } from '../../services/super-powers.service';
 import { ContentDeletionConfirmationComponent } from '../../modals/content-deletion-confirmation/content-deletion-confirmation.component';
 import { MatDialog } from '@angular/material/dialog';
+import { SnackBarServiceService } from '../../services/snack-bar-service.service';
+import { DefaultResponseMessages } from '../../enumerators.ts/default-response-messages';
 
 @Component({
   selector: 'app-super-powers-display',
@@ -12,7 +14,8 @@ export class SuperPowersDisplayComponent implements OnInit {
   superPowers: any[] = [];
   constructor(
     private superPowersService: SuperPowersService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackbarService: SnackBarServiceService
   ) {}
 
   ngOnInit(): void {
@@ -22,6 +25,9 @@ export class SuperPowersDisplayComponent implements OnInit {
   deleteSuperPower(superPowerId: number) {
     this.superPowersService.deleteSuperPowerById(superPowerId);
     this.superPowers = this.superPowersService.getAllSuperPowers();
+    this.snackbarService.successSnackBarDisplay(
+      DefaultResponseMessages.OperationCompletedSuccessfully
+    );
   }
 
   confirmSuperPowerDeletion(superPower: any) {
