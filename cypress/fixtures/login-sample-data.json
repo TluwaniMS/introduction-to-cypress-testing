@@ -1,0 +1,10 @@
+{
+  "correctUserAuthenticationInformation":{
+    "email":"",
+    "password":""
+  },
+  "incorrectUserAuthenticationInformation":{
+    "email":"",
+    "password":""
+  }
+}
