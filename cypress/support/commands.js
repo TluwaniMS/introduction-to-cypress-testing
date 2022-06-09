@@ -11,3 +11,8 @@ Cypress.Commands.add("register", (email, password) => {
   cy.get(`[formControlName='passwordConfirmation']`).type(password);
   cy.get("button").contains("register").click();
 });
+
+
+Cypress.Commands.add("signOut", () => {
+  cy.get(`[matTooltip='sign out']`).click()
+});
