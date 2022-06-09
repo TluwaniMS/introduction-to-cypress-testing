@@ -43,7 +43,15 @@ Cypress.Commands.add("deleteSuperHero", (name) => {
     .click();
 });
 
-Cypress.Commands.add("confirmSuperHeroDeletion", () => {
+Cypress.Commands.add("deleteSuperPower", (name) => {
+  cy.get(`.mat-card`)
+    .filter(`:contains(${name})`)
+    .children(".mat-card-actions")
+    .children("button")
+    .click();
+});
+
+Cypress.Commands.add("confirmDeletion", () => {
   cy.get("button").contains("Confirm").click();
 });
 

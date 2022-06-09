@@ -27,7 +27,7 @@ And("Delete a super-hero named {string}", (superHero) => {
 });
 
 And("I confirm the deletion", () => {
-  cy.confirmSuperHeroDeletion();
+  cy.confirmDeletion();
 });
 
 Then("I should be left with 2 super-heroes", () => {
