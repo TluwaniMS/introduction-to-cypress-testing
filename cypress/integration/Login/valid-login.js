@@ -8,7 +8,7 @@ Given("I visit the projects url", () => {
   cy.visit("/");
 });
 
-And("I sign into application", () => {
+And("I sign into application with valid credentials", () => {
   cy.fixture("login-sample-data").then((user) => {
     const _user = user.correctUserAuthenticationInformation;
     cy.signIn(_user.email, _user.password);
