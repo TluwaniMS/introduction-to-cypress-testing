@@ -1,10 +1,10 @@
 {
-  "correctUserAuthenticationInformation":{
-    "email":"",
-    "password":""
+  "correctUserAuthenticationInformation": {
+    "email": "edwin@mock.com",
+    "password": 1234567
   },
-  "incorrectUserAuthenticationInformation":{
-    "email":"",
-    "password":""
+  "incorrectUserAuthenticationInformation": {
+    "email": "edwin@mock.com",
+    "password": 123456
   }
 }
