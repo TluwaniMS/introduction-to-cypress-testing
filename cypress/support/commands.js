@@ -12,6 +12,10 @@ Cypress.Commands.add("register", (email, password) => {
   cy.get("button").contains("register").click();
 });
 
+Cypress.Commands.add("returnToSignInView", () => {
+  cy.get(".auth-prompt-container").contains("sign-in").click();
+});
+
 Cypress.Commands.add("signOut", () => {
   cy.get(`[matTooltip='sign out']`).click();
 });
@@ -29,4 +33,24 @@ Cypress.Commands.add("createSuperPower", (power, description) => {
   cy.get(`[formControlName='power']`).type(power);
   cy.get(`[formControlName='description']`).type(description);
   cy.get("button").contains("Create").click();
+});
+
+Cypress.Commands.add("deleteSuperHero", (name) => {
+  cy.get(`.mat-card`)
+    .filter(`:contains(${name})`)
+    .children(".mat-card-actions")
+    .children("button")
+    .click();
+});
+
+Cypress.Commands.add("confirmSuperHeroDeletion", () => {
+  cy.get("button").contains("Confirm").click();
+});
+
+Cypress.Commands.add("routeToSuperHeroView", () => {
+  cy.get(`[matTooltip='view super heroes']`).click();
+});
+
+Cypress.Commands.add("routeToSuperPowersView", () => {
+  cy.get(`[matTooltip='view super powers']`).click();
 });

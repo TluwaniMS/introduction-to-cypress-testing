@@ -1,4 +1,8 @@
-import { Given, Then, And } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then, And, After } from "cypress-cucumber-preprocessor/steps";
+
+After(() => {
+  cy.returnToSignInView();
+});
 
 Given("I visit the projects url", () => {
   cy.visit("/");
