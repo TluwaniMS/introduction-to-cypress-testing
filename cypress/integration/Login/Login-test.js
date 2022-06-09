@@ -1,4 +1,4 @@
-import { Given,Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then } from "cypress-cucumber-preprocessor/steps";
 
 Given("I Login What happens", () => {
   cy.visit("/");
