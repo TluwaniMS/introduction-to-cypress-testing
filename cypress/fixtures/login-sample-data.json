@@ -6,5 +6,9 @@
   "incorrectUserAuthenticationInformation": {
     "email": "edwin@mock.com",
     "password": 123456
+  },
+  "unknownUserAuthenticationInformation": {
+    "email": "len@mock.com",
+    "password": 1234567
   }
 }
