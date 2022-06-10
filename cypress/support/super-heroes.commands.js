@@ -1,7 +1,9 @@
-Cypress.Commands.add("createSuperHero", (name, superPowers) => {
+Cypress.Commands.add("createSuperHero", (name, superPower) => {
   cy.get(`[formControlName='name']`).type(name);
-  cy.get(`[formControlName='superPowers']`).select(superPowers);
-  cy.get("button").contains("create").click();
+
+  cy.get(`.mat-select`).click().get("mat-option").contains(superPower).click();
+
+  cy.get("button").contains("create").click({ force: true });
 });
 
 Cypress.Commands.add("deleteSuperHero", (name) => {

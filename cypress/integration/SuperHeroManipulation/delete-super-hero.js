@@ -1,5 +1,4 @@
 import {
-  Given,
   Then,
   And,
   After,
@@ -16,6 +15,7 @@ Before({ tags: "@RequiresSignin" }, () => {
 
 After({ tags: "@RequiresSignout" }, () => {
   cy.signOut();
+  cy.reload();
 });
 
 When("I switch to the super-heroes view", () => {
