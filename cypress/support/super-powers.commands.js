@@ -1,6 +1,4 @@
 Cypress.Commands.add("createSuperPower", (power, description) => {
-  cy.get(`[matTooltip='create']`).click();
-  cy.get("button").contains("Super Power").click();
   cy.get(`[formControlName='power']`).type(power);
   cy.get(`[formControlName='description']`).type(description);
   cy.get("button").contains("Create").click();
