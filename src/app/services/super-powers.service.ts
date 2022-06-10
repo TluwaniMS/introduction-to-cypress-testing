@@ -23,6 +23,6 @@ export class SuperPowersService {
   }
 
   generateSuperPowerId() {
-    return this.ArrayOfSuperPowers.length + 1
+    return this.ArrayOfSuperPowers.length + 1;
   }
 }

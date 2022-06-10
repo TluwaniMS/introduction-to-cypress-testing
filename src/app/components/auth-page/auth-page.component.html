@@ -2,11 +2,15 @@
   <mat-grid-tile></mat-grid-tile>
   <mat-grid-tile [colspan]="2">
     <ng-container *ngIf="signInFormDisplayIsActive">
-      <app-login-page (changeAuthScreen)="changeDisplayAuthView()"></app-login-page>
+      <app-login-page
+        (changeAuthScreen)="changeDisplayAuthView()"
+      ></app-login-page>
     </ng-container>
 
     <ng-container *ngIf="!signInFormDisplayIsActive">
-      <app-registration-page (changeAuthScreen)="changeDisplayAuthView()"></app-registration-page>
+      <app-registration-page
+        (changeAuthScreen)="changeDisplayAuthView()"
+      ></app-registration-page>
     </ng-container>
   </mat-grid-tile>
   <mat-grid-tile></mat-grid-tile>

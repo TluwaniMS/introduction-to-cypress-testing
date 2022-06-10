@@ -23,6 +23,6 @@ export class SuperHeroesService {
   }
 
   generateSuperHeroIdId() {
-    return this.ArrayOfSuperHeroes.length + 1
+    return this.ArrayOfSuperHeroes.length + 1;
   }
 }

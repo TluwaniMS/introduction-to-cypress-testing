@@ -8,9 +8,8 @@ describe('ContentDeletionConfirmationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContentDeletionConfirmationComponent ]
-    })
-    .compileComponents();
+      declarations: [ContentDeletionConfirmationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
