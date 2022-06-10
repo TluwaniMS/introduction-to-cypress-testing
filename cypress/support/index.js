@@ -21,7 +21,12 @@ import {
   routeToSuperPowersView,
   returnToSignInView,
 } from "./routing.commands";
-import { signOut, confirmDeletion } from "./shared.commands";
+import {
+  signOut,
+  confirmDeletion,
+  createContent,
+  selectContentType,
+} from "./shared.commands";
 import { signIn } from "./sign-in.commands";
 import { createSuperHero, deleteSuperHero } from "./super-heroes.commands";
 import { createSuperPower, deleteSuperPower } from "./super-powers.commands";
