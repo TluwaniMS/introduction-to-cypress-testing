@@ -8,6 +8,10 @@ Cypress.Commands.add("routeToSuperPowersView", () => {
   cy.get(`[matTooltip='view super powers']`).click();
 });
 
-Cypress.Commands.add("returnToSignInView", () => {
+Cypress.Commands.add("goToSignInView", () => {
   cy.get(".auth-prompt-container").contains("sign-in").click();
+});
+
+Cypress.Commands.add("goToRegistrationView", () => {
+  cy.get(".auth-prompt-container").contains("register").click();
 });

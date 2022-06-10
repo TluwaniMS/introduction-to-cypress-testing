@@ -1,11 +1,15 @@
 import { Given, Then, And, After } from "cypress-cucumber-preprocessor/steps";
 
 After(() => {
-  cy.returnToSignInView();
+  cy.goToSignInView();
 });
 
 Given("I visit the projects url", () => {
   cy.visit("/");
+});
+
+And("I switch to the registration page", () => {
+  cy.goToRegistrationView();
 });
 
 And("I register an already existing user", () => {

@@ -1,4 +1,4 @@
-import { Given, Then, And,After } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then, And, After } from "cypress-cucumber-preprocessor/steps";
 
 After({ tags: "@RequiresSignout" }, () => {
   cy.signOut();
