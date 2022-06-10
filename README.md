@@ -19,4 +19,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 * Step 3 (running test):
 
+`NB!` Please ensure the server is running, before attempting to run tests.
+
 Run ``` npm run cypress:open``` to run the cypress tests.
