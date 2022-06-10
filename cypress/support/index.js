@@ -15,16 +15,13 @@
 
 // When a command from ./commands is ready to use, import with `import './commands'` syntax
 // import './commands';
+import { register } from "./registration.commands";
 import {
-  signIn,
-  register,
-  signOut,
-  createSuperHero,
-  createSuperPower,
-  deleteSuperHero,
-  deleteSuperPower,
-  confirmDeletion,
   routeToSuperHeroView,
   routeToSuperPowersView,
   returnToSignInView,
-} from "./commands";
+} from "./routing.commands";
+import { signOut, confirmDeletion } from "./shared.commands";
+import { signIn } from "./sign-in.commands";
+import { createSuperHero, deleteSuperHero } from "./super-heroes.commands";
+import { createSuperPower, deleteSuperPower } from "./super-powers.commands";
